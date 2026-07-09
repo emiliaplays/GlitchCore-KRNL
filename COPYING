@@ -1,3 +1,15 @@
+GlitchCore-KRNL
+Copyright (C) 2026 GlitchByEmilia
+
+GlitchCore-KRNL is a custom Linux kernel for Samsung Exynos 9820 / 9825 devices.
+
+This project is based on the Linux kernel and incorporates work from
+multiple open-source contributors.
+
+Original Linux kernel license (GPL-2.0 only) follows below.
+
+==========================================================
+
 
    NOTE! This copyright does *not* cover user programs that use kernel
  services by normal system calls - this is merely considered normal use
