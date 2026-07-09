@@ -42,6 +42,8 @@ while [[ $# -gt 0 ]]; do
 done
 
 echo "Preparing the build environment..."
+export KBUILD_BUILD_USER="GlitchByEmilia"
+export KBUILD_BUILD_HOST="GlitchCore"
 
 pushd $(dirname "$0") > /dev/null
 CORES=`cat /proc/cpuinfo | grep -c processor`
