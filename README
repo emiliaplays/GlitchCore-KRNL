@@ -1,89 +1,85 @@
 # GlitchCore-KRNL
 
-Custom Linux **4.14.356** kernel for Samsung Exynos 9820 / 9825 devices.
+> Custom Linux kernel for Samsung Exynos 9820 / 9825 devices
 
-> Built and maintained by **GlitchByEmilia**
-
----
-
-# ⚠️ Disclaimer
-
-```
-/*
- * Your warranty is now void.
- *
- * I am NOT responsible for:
- * - Bricked devices
- * - Bootloops
- * - Lost data
- * - Dead SD cards
- * - Hardware damage
- * - Overheating
- * - Broken alarms
- * - Any other damage caused by flashing this kernel.
- *
- * Flashing a custom kernel modifies critical system components.
- * You are choosing to do this at your own risk.
- *
- * Always keep a backup of your boot image before flashing.
- *
- * If you are not comfortable recovering your device using
- * TWRP or Odin, DO NOT flash this kernel.
- */
-```
-
-By flashing **GlitchCore-KRNL**, you acknowledge that you understand the risks and accept full responsibility for your device.
+Built and maintained by **GlitchByEmilia**
 
 ---
 
-# About
+## About
 
-GlitchCore-KRNL is a custom Linux kernel for Samsung Exynos 9820 / 9825 devices.
+GlitchCore-KRNL is a custom Linux **4.14.356** kernel focused on providing a stable, fast and reliable experience for Samsung Galaxy S10 and Note10 devices.
 
-The goal of this project is to provide a kernel focused on:
-
-- Stability
-- Performance
-- Daily usability
-- Clean source code
-- Long-term development
-
----
-
-# Current Status
-
-## GlitchCore-KRNL v1.0
-
-**v1.0** is the **first public test build** of GlitchCore-KRNL.
-
-Although this release is marked as a **test build**, it has been tested on the **Samsung Galaxy Note10+ (SM-N975F / d2s)** and is currently **stable enough for daily driving**.
-
-Development is still active and many improvements are planned for future releases.
+The project is built completely from source and aims to improve performance, battery life and long-term maintainability while staying suitable for everyday use.
 
 ---
 
 # Features
 
 - Linux **4.14.356**
-- One UI 7 compatible
-- Android Clang 20
+- Android 15 / One UI 7 compatible
+- Built with Android Clang 20
 - Built completely from source
-- Custom **GlitchCore** branding
-- TWRP flashable ZIP
-- Based on the latest ExtremeKernel / OpenELA kernel source
-- Optimized for Samsung Exynos 9820 / 9825 devices
+- Custom GlitchCore branding
+- AnyKernel3 flashable ZIP
+- KernelSU-Next Legacy support
+- Manual hook implementation
+- Optimized for Exynos 9820 / 9825
+- Stable daily-driver kernel
 
 ---
 
-# Known Issues
+# Current Release
 
-## KernelSU
+## GlitchCore-KRNL v1.1
 
-❌ **KernelSU is currently NOT working in v1.0.**
+| Feature | Status |
+|---------|--------|
+| Boot | ✅ |
+| Daily Driver | ✅ |
+| One UI 7 | ✅ |
+| KernelSU | ✅ |
+| Stability | ✅ |
+| Battery Life | ✅ |
 
-The kernel itself is fully bootable and stable.
+---
 
-KernelSU support is currently being worked on and will return in a future release.
+# KernelSU
+
+GlitchCore-KRNL includes built-in support for:
+
+**KernelSU-Next Legacy v3.2.0**
+
+Current status:
+
+```
+KernelSU Version
+----------------
+v3.2.0-legacy
+
+Hook Mode
+---------
+Manual
+
+Driver
+------
+Built-In
+
+Status
+------
+Working
+```
+
+The recommended Manager APK is included inside this repository:
+
+```
+extras/KernelSU-Next/
+└── KernelSU_Next_v3.2.0_33129-release.apk
+```
+
+For best compatibility use the bundled Manager.
+
+Newer Manager releases may incorrectly report that the legacy driver is missing.
 
 ---
 
@@ -101,61 +97,35 @@ KernelSU support is currently being worked on and will return in a future releas
 
 ---
 
-# Current Release
-
-```
-Kernel
--------
-GlitchCore-KRNL v1.0
-
-Linux Version
--------------
-4.14.356
-
-Status
-------
-✅ Stable (Test Build)
-
-Daily Driver
-------------
-✅ Yes
-
-KernelSU
---------
-❌ Not Working
-```
-
----
-
 # Flashing
 
 Flash the generated ZIP using **TWRP**.
 
-Before flashing it is highly recommended to:
+Recommended before flashing:
 
-- Backup your Boot partition
-- Backup important data
+- Backup Boot partition
+- Backup important files
 - Keep a copy of your previous kernel
-- Know how to recover your device using TWRP or Odin
+- Know how to recover using TWRP or Odin
 
 ---
 
 # Building
 
-Clone the repository:
+Clone the repository
 
 ```bash
 git clone https://github.com/emiliaplays/GlitchCore-KRNL.git
 cd GlitchCore-KRNL
 ```
 
-Build for Galaxy Note10+:
+Build for Galaxy Note10+
 
 ```bash
 ./build.sh --model d2s --ksu y
 ```
 
-Supported models:
+Supported models
 
 ```
 beyond0lte
@@ -174,34 +144,51 @@ d2xks
 
 # Upcoming Changes
 
-The following improvements are currently planned for future releases.
+## v1.2
 
-Development priorities may change depending on stability, testing, and community feedback.
-
-## Planned for v1.1
-
-- Fix KernelSU support
-- Remove `openela-rc1` from the kernel version string
-- Improve installer reliability
-- General source cleanup
-
-## Planned for v1.2
-
-- Performance optimizations
-- UFS optimizations
 - Scheduler improvements
-- ZRAM tuning
 - Memory management improvements
+- Better thermal tuning
+- Additional One UI optimizations
+- Improved installer
+- Performance improvements
+- Battery optimizations
+- Source cleanup
 
-## Planned Features
+### Planned Features
 
 - Optional CPU overclock
 - Optional GPU overclock
 - Thermal profiles
-- Additional CPU governors
+- Additional governors
 - Additional I/O schedulers
-- More One UI 7 optimizations
-- Additional performance tuning
+- Dynamic performance profiles
+
+---
+
+# Disclaimer
+
+```text
+/*
+ * Your warranty is now void.
+ *
+ * I am NOT responsible for:
+ *
+ * • Bricked devices
+ * • Bootloops
+ * • Lost data
+ * • Dead SD cards
+ * • Hardware damage
+ * • Overheating
+ * • Missed alarms
+ * • Any damage caused by flashing this kernel
+ *
+ * You alone are responsible for anything that happens
+ * to your device.
+ *
+ * Always make a backup before flashing.
+ */
+```
 
 ---
 
@@ -211,53 +198,80 @@ Huge thanks to everyone whose work made this project possible.
 
 - Ravindu644
 - ExtremeKernel
-- KernelSU
+- KernelSU-Next
 - OpenELA
 - Samsung Open Source Release Center
 - Android Open Source Project (AOSP)
+- Linux Kernel Community
 
-Without the work of these developers and projects, GlitchCore-KRNL would not have been possible.
+Without these projects this kernel would not exist.
 
 ---
 
 # License
 
-GlitchCore-KRNL is based on the Linux kernel.
+GlitchCore-KRNL is licensed under the **GNU General Public License v2 (GPL-2.0)**.
 
-The Linux kernel is licensed under the **GNU General Public License v2 (GPL-2.0)**.
+This project is based on the Linux kernel and therefore all kernel modifications remain licensed under GPL-2.0.
 
-All original kernel code remains licensed under GPL-2.0.
+See the **COPYING** file for the full license.
 
 ---
 
 # Support
 
-If you discover a bug or have a feature request, please open an **Issue** on GitHub.
+Please open a GitHub Issue if you encounter a bug.
 
-When reporting bugs, please include:
+When reporting issues include:
 
 - Device model
 - ROM version
 - Kernel version
-- Steps to reproduce the issue
+- Recovery used
+- Steps to reproduce
+- Kernel logs
 - Recovery logs (if available)
-- Kernel logs (if available)
-
-This helps identify and fix problems much faster.
 
 ---
 
-# Project Philosophy
+# Philosophy
 
-GlitchCore-KRNL is developed with the following goals in mind:
+GlitchCore-KRNL follows a simple philosophy:
 
-- Stability over benchmarks
-- Clean and maintainable code
-- Daily-driver reliability
-- Community-driven improvements
+- Stability before benchmarks
+- Battery before unnecessary overclocking
+- Clean source code
 - Open-source development
+- Daily-driver reliability
+- Long-term support
 
-Every release is tested before being published, but as with any custom kernel, there is always some risk involved.
+Every public release is tested before being published.
+
+---
+
+# Downloads
+
+Releases are available on GitHub.
+
+Each release includes:
+
+- GlitchCore-KRNL AnyKernel3 ZIP
+- Recommended KernelSU-Next Manager APK
+- Release notes
+- Changelog
+
+---
+
+# Contributing
+
+Contributions are welcome.
+
+Feel free to:
+
+- Open Issues
+- Submit Pull Requests
+- Report bugs
+- Suggest new features
 
 ---
 
@@ -265,6 +279,8 @@ Every release is tested before being published, but as with any custom kernel, t
 
 Thank you for using **GlitchCore-KRNL**.
 
-If you enjoy this project, consider giving the repository a ⭐ on GitHub.
+If you enjoy this project, consider giving it a ⭐ on GitHub.
 
-Feedback, bug reports, suggestions, and pull requests are always welcome.
+Happy flashing!
+
+— **GlitchByEmilia**
