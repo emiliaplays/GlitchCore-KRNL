@@ -4,10 +4,13 @@
 
 <p align="center">
 
+![Version](https://img.shields.io/badge/Version-v1.2-blue?style=for-the-badge)
 ![Linux](https://img.shields.io/badge/Linux-4.14.356-blue?style=for-the-badge)
 ![Android](https://img.shields.io/badge/Android-15-green?style=for-the-badge)
 ![KernelSU](https://img.shields.io/badge/KernelSU-Legacy-success?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-GPL--2.0-orange?style=for-the-badge)
+
+[![Download](https://img.shields.io/badge/Download-Latest_Release-success?style=for-the-badge)](https://github.com/emiliaplays/GlitchCore-KRNL/releases/latest)
 
 </p>
 
@@ -17,7 +20,7 @@ Built and maintained by **GlitchByEmilia**
 
 # About
 
-GlitchCore-KRNL is a custom Linux **4.14.356** kernel for Samsung Galaxy S10 and Galaxy Note10 devices powered by the Exynos 9820 / 9825 platform.
+GlitchCore-KRNL is a custom Linux **4.14.356** kernel for Samsung Galaxy S10 and Galaxy Note10 devices powered by the Samsung **Exynos 9820 / 9825** platform.
 
 The project is built completely from source with a focus on:
 
@@ -26,8 +29,22 @@ The project is built completely from source with a focus on:
 - Battery life
 - Long-term maintainability
 - Daily-driver reliability
+- Clean, maintainable source code
 
 Every public release is tested on real hardware before publication.
+
+---
+
+# Current Status
+
+| Component | Status |
+|-----------|--------|
+| Latest Stable | ✅ GlitchCore-KRNL v1.2 |
+| Android | ✅ One UI 7 / Android 15 |
+| KernelSU Legacy | ✅ Working |
+| Daily Driver | ✅ Recommended |
+| Boot Tested | ✅ |
+| OC Edition | 🚧 In Development |
 
 ---
 
@@ -42,7 +59,7 @@ Every public release is tested on real hardware before publication.
 - KernelSU-Next Legacy support
 - Manual hook implementation
 - Optimized VFS cache behavior
-- Optimized for Exynos 9820 / 9825
+- Optimized for Samsung Exynos 9820 / 9825
 - Boot-tested releases
 - Stable daily-driver kernel
 
@@ -103,7 +120,7 @@ For best compatibility always use the bundled Manager.
 
 If KernelSU Manager reports:
 
-```
+```text
 Non-GKI Kernel
 ```
 
@@ -129,7 +146,7 @@ The kernel already contains the correct KernelSU Legacy driver.
 
 # Flashing
 
-Flash the generated AnyKernel3 ZIP using **TWRP Recovery**.
+Flash the generated **AnyKernel3 ZIP** using **TWRP Recovery**.
 
 Recommended before flashing:
 
@@ -142,14 +159,14 @@ Recommended before flashing:
 
 # Building
 
-Clone the repository:
+Clone the repository
 
 ```bash
 git clone https://github.com/emiliaplays/GlitchCore-KRNL.git
 cd GlitchCore-KRNL
 ```
 
-Example build:
+Example build
 
 ```bash
 ./build.sh --model d2s --ksu y
@@ -172,13 +189,13 @@ d2xks
 
 ---
 
-# Roadmap
+# Development Roadmap
 
 ## GlitchCore-KRNL v1.2 OC
 
-Currently under development.
+**Current status:** 🚧 In Development
 
-Planned improvements
+### Planned improvements
 
 - Scheduler tuning
 - CPU performance tuning
@@ -189,12 +206,26 @@ Planned improvements
 - Source cleanup
 - Further battery optimizations
 
-Experimental features
+### Experimental features
 
 - GPU overclock
 - CPU overclock
 - Thermal profiles
 - Dynamic performance modes
+
+---
+
+# Repository Structure
+
+```text
+build.sh
+extras/
+AnyKernel3/
+arch/
+drivers/
+kernel/
+scripts/
+```
 
 ---
 
@@ -232,6 +263,7 @@ Huge thanks to everyone whose work made this project possible.
 - ExtremeKernel
 - KernelSU-Next
 - OpenELA
+- Samsung Electronics
 - Samsung Open Source Release Center
 - Android Open Source Project (AOSP)
 - Linux Kernel Community
@@ -244,7 +276,7 @@ Without these projects this kernel would not exist.
 
 GlitchCore-KRNL is licensed under the **GNU General Public License v2 (GPL-2.0)**.
 
-This project is based on the Linux kernel and therefore all kernel modifications remain licensed under GPL-2.0.
+This project is based on the Linux kernel, therefore all kernel modifications remain licensed under GPL-2.0.
 
 See the **COPYING** file for the full license.
 
@@ -261,7 +293,7 @@ When reporting issues include:
 - Kernel version
 - Recovery used
 - Steps to reproduce
-- Kernel logs
+- Kernel logs (`dmesg`)
 - Recovery logs (if available)
 
 ---
