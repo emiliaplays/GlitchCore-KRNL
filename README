@@ -2,15 +2,28 @@
 
 > Custom Linux kernel for Samsung Exynos 9820 / 9825 devices
 
+![Linux](https://img.shields.io/badge/Linux-4.14.356-blue)
+![Android](https://img.shields.io/badge/Android-15-green)
+![KernelSU](https://img.shields.io/badge/KernelSU-Legacy-success)
+![License](https://img.shields.io/badge/License-GPL--2.0-orange)
+
 Built and maintained by **GlitchByEmilia**
 
 ---
 
-## About
+# About
 
-GlitchCore-KRNL is a custom Linux **4.14.356** kernel focused on providing a stable, fast and reliable experience for Samsung Galaxy S10 and Note10 devices.
+GlitchCore-KRNL is a custom Linux **4.14.356** kernel for Samsung Galaxy S10 and Galaxy Note10 devices powered by the Exynos 9820 / 9825 platform.
 
-The project is built completely from source and aims to improve performance, battery life and long-term maintainability while staying suitable for everyday use.
+The project is built completely from source with a focus on:
+
+- Stability
+- Performance
+- Battery life
+- Long-term maintainability
+- Daily-driver reliability
+
+Every public release is tested on real hardware before publication.
 
 ---
 
@@ -24,23 +37,27 @@ The project is built completely from source and aims to improve performance, bat
 - AnyKernel3 flashable ZIP
 - KernelSU-Next Legacy support
 - Manual hook implementation
+- Optimized VFS cache behavior
 - Optimized for Exynos 9820 / 9825
+- Boot-tested releases
 - Stable daily-driver kernel
 
 ---
 
 # Current Release
 
-## GlitchCore-KRNL v1.1
+## GlitchCore-KRNL v1.2
 
 | Feature | Status |
 |---------|--------|
 | Boot | ✅ |
 | Daily Driver | ✅ |
 | One UI 7 | ✅ |
-| KernelSU | ✅ |
+| KernelSU Legacy | ✅ |
+| VFS Cache Optimization | ✅ |
 | Stability | ✅ |
 | Battery Life | ✅ |
+| Performance | ✅ |
 
 ---
 
@@ -50,9 +67,9 @@ GlitchCore-KRNL includes built-in support for:
 
 **KernelSU-Next Legacy v3.2.0**
 
-Current status:
+Current status
 
-```
+```text
 KernelSU Version
 ----------------
 v3.2.0-legacy
@@ -70,16 +87,25 @@ Status
 Working
 ```
 
-The recommended Manager APK is included inside this repository:
+The recommended Manager APK is included with every GitHub release and inside this repository.
+
+```text
+extras/
+└── KernelSU-Next/
+    └── KernelSU_Next_v3.2.0_33129-release.apk
+```
+
+For best compatibility always use the bundled Manager.
+
+If KernelSU Manager reports:
 
 ```
-extras/KernelSU-Next/
-└── KernelSU_Next_v3.2.0_33129-release.apk
+Non-GKI Kernel
 ```
 
-For best compatibility use the bundled Manager.
+after flashing, simply reinstall the bundled KernelSU Manager APK.
 
-Newer Manager releases may incorrectly report that the legacy driver is missing.
+The kernel already contains the correct KernelSU Legacy driver.
 
 ---
 
@@ -99,11 +125,11 @@ Newer Manager releases may incorrectly report that the legacy driver is missing.
 
 # Flashing
 
-Flash the generated ZIP using **TWRP**.
+Flash the generated AnyKernel3 ZIP using **TWRP Recovery**.
 
 Recommended before flashing:
 
-- Backup Boot partition
+- Backup your Boot partition
 - Backup important files
 - Keep a copy of your previous kernel
 - Know how to recover using TWRP or Odin
@@ -112,14 +138,14 @@ Recommended before flashing:
 
 # Building
 
-Clone the repository
+Clone the repository:
 
 ```bash
 git clone https://github.com/emiliaplays/GlitchCore-KRNL.git
 cd GlitchCore-KRNL
 ```
 
-Build for Galaxy Note10+
+Example build:
 
 ```bash
 ./build.sh --model d2s --ksu y
@@ -127,7 +153,7 @@ Build for Galaxy Note10+
 
 Supported models
 
-```
+```text
 beyond0lte
 beyond1lte
 beyond2lte
@@ -142,27 +168,29 @@ d2xks
 
 ---
 
-# Upcoming Changes
+# Roadmap
 
-## v1.2
+## GlitchCore-KRNL v1.2 OC
 
-- Scheduler improvements
+Currently under development.
+
+Planned improvements
+
+- Scheduler tuning
+- CPU performance tuning
+- GPU governor tuning
 - Memory management improvements
-- Better thermal tuning
-- Additional One UI optimizations
-- Improved installer
-- Performance improvements
-- Battery optimizations
+- Devfreq tuning
+- Additional performance profiles
 - Source cleanup
+- Further battery optimizations
 
-### Planned Features
+Experimental features
 
-- Optional CPU overclock
-- Optional GPU overclock
+- GPU overclock
+- CPU overclock
 - Thermal profiles
-- Additional governors
-- Additional I/O schedulers
-- Dynamic performance profiles
+- Dynamic performance modes
 
 ---
 
@@ -236,35 +264,37 @@ When reporting issues include:
 
 # Philosophy
 
-GlitchCore-KRNL follows a simple philosophy:
+GlitchCore-KRNL follows a simple philosophy.
 
 - Stability before benchmarks
 - Battery before unnecessary overclocking
+- Measured optimizations instead of placebo tweaks
 - Clean source code
 - Open-source development
 - Daily-driver reliability
 - Long-term support
 
-Every public release is tested before being published.
+Every public release is tested on real hardware before being published.
 
 ---
 
 # Downloads
 
-Releases are available on GitHub.
+Official releases are available on GitHub.
 
 Each release includes:
 
-- GlitchCore-KRNL AnyKernel3 ZIP
+- AnyKernel3 flashable ZIP
+- SHA-256 checksum
 - Recommended KernelSU-Next Manager APK
 - Release notes
-- Changelog
+- Complete changelog
 
 ---
 
 # Contributing
 
-Contributions are welcome.
+Contributions are always welcome.
 
 Feel free to:
 
@@ -272,6 +302,7 @@ Feel free to:
 - Submit Pull Requests
 - Report bugs
 - Suggest new features
+- Improve documentation
 
 ---
 
@@ -279,8 +310,8 @@ Feel free to:
 
 Thank you for using **GlitchCore-KRNL**.
 
-If you enjoy this project, consider giving it a ⭐ on GitHub.
+If you enjoy this project, consider giving the repository a ⭐ on GitHub.
 
 Happy flashing!
 
-— **GlitchByEmilia**
+**— GlitchByEmilia**
