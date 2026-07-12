@@ -2,10 +2,14 @@
 
 > Custom Linux kernel for Samsung Exynos 9820 / 9825 devices
 
-![Linux](https://img.shields.io/badge/Linux-4.14.356-blue)
-![Android](https://img.shields.io/badge/Android-15-green)
-![KernelSU](https://img.shields.io/badge/KernelSU-Legacy-success)
-![License](https://img.shields.io/badge/License-GPL--2.0-orange)
+<p align="center">
+
+![Linux](https://img.shields.io/badge/Linux-4.14.356-blue?style=for-the-badge)
+![Android](https://img.shields.io/badge/Android-15-green?style=for-the-badge)
+![KernelSU](https://img.shields.io/badge/KernelSU-Legacy-success?style=for-the-badge)
+![License](https://img.shields.io/badge/License-GPL--2.0-orange?style=for-the-badge)
+
+</p>
 
 Built and maintained by **GlitchByEmilia**
 
